@@ -37,7 +37,6 @@ public class Journal
         }
         Console.WriteLine($"Journal saved to '{filename}'.");
     }
-
     public void LoadFromCsv(string filename)
     {
         if (!File.Exists(filename))

@@ -51,12 +51,6 @@ EXCEEDING REQUIREMENTS (for full 100%)
 
 4. Randomization improved:
    - Selects from remaining visible words only.
-
-ADD-ON IDEAS (not implemented but easy to add):
-- Load scriptures from a file.
-- Provide a library of scriptures and choose randomly.
-- Timed mode: hide words automatically after intervals.
-- "Hint mode" that reveals first letter of hidden words.
 */
 
 

@@ -27,27 +27,18 @@ public class Scripture
         Console.WriteLine();
     }
 
-    public void HideRandomWords(int count)
+    public void HideRandomWords(int numberToHide)
     {
-        // Choose only NOT hidden words (stretch feature)
+        // STRETCH: Only hide words that are not already hidden
         var available = _words.Where(w => !w.IsHidden()).ToList();
 
-        if (available.Count == 0)
-            return;
-
-        for (int i = 0; i < count; i++)
+        for (int i = 0; i < numberToHide && available.Count > 0; i++)
         {
-            if (available.Count == 0)
-                break;
-
             int index = _random.Next(available.Count);
             available[index].Hide();
             available.RemoveAt(index);
         }
     }
 
-    public bool AllWordsHidden()
-    {
-        return _words.All(w => w.IsHidden());
-    }
+    public bool AllWordsHidden() => _words.All(w => w.IsHidden());
 }

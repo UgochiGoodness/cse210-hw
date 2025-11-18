@@ -4,12 +4,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello World! This is the ScriptureMemorizer Project.");
-
-         Reference reference = new Reference("Proverbs", 3, 5, 6);
-
-        string text = "Trust in the Lord with all thine heart; and lean not unto thine own understanding.";
-
+        Reference reference = new Reference("Proverbs", 3, 5, 6);
+        string text = "Trust in the Lord with all thine heart and lean not unto thine own understanding.";
         Scripture scripture = new Scripture(reference, text);
 
         while (true)
@@ -23,34 +19,30 @@ class Program
                 break;
             }
 
-            Console.WriteLine("\nPress ENTER to hide more words or type 'quit' to end.");
+            Console.WriteLine("\nPress ENTER to hide more words, or type 'quit' to end:");
             string input = Console.ReadLine();
 
             if (input.ToLower() == "quit")
-            {
                 break;
-            }
 
-            // Hide 2–3 random words each step
-            scripture.HideRandomWords(3);
+            scripture.HideRandomWords(3); // Hides 3 words per step
         }
     }
 }
 
 /*
-EXCEEDING REQUIREMENTS (for full 100%)
+EXCEEDING REQUIREMENTS 
 
-1. Stretch feature: The program hides ONLY words that are not already hidden.
-   (The core requirement allowed choosing any word, even hidden ones.)
+1. STRETCH FEATURE — Smarter Word Hiding
+   - The program hides ONLY words that are not already hidden
+     (instead of randomly selecting from all words, as the core requires).
 
-2. Clean OOP design using full encapsulation and multiple classes.
+2. STRONG OOP DESIGN
+   - Uses 4 classes: Program, Reference, Scripture, Word
+   - Clean encapsulation with private fields + public methods
+   - Multiple constructors in Reference (single verse or verse range)
 
-3. Flexible constructors: 
-   - One-verse references (e.g., John 3:16)
-   - Multi-verse references (e.g., Proverbs 3:5-6)
-
-4. Randomization improved:
-   - Selects from remaining visible words only.
+3. EASY EXTENSIBILITY
+   - Scripture selection logic is structured so additional features
+     (like file loading or random scripture rotation) can be added easily.
 */
-
-

@@ -9,22 +9,14 @@ public class Word
         _isHidden = false;
     }
 
-    public bool IsHidden()
-    {
-        return _isHidden;
-    }
+    public bool IsHidden() => _isHidden;
 
-    public void Hide()
-    {
-        _isHidden = true;
-    }
+    public void Hide() => _isHidden = true;
 
     public string GetDisplayText()
     {
         if (_isHidden)
-        {
             return new string('_', _text.Length);
-        }
         return _text;
     }
 }

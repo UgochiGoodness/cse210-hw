@@ -5,7 +5,7 @@ public class Reference
     private int _verseStart;
     private int _verseEnd;
 
-    // Constructor for single verse: "John 3:16"
+    // Single verse constructor
     public Reference(string book, int chapter, int verse)
     {
         _book = book;
@@ -14,7 +14,7 @@ public class Reference
         _verseEnd = verse;
     }
 
-    // Constructor for verse range: "Proverbs 3:5-6"
+    // Verse range constructor
     public Reference(string book, int chapter, int verseStart, int verseEnd)
     {
         _book = book;
@@ -26,12 +26,7 @@ public class Reference
     public override string ToString()
     {
         if (_verseStart == _verseEnd)
-        {
             return $"{_book} {_chapter}:{_verseStart}";
-        }
-        else
-        {
-            return $"{_book} {_chapter}:{_verseStart}-{_verseEnd}";
-        }
+        return $"{_book} {_chapter}:{_verseStart}-{_verseEnd}";
     }
 }

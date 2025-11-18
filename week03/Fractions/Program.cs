@@ -22,5 +22,4 @@ class Program
         Console.WriteLine(f4.GetFractionString());
         Console.WriteLine(f4.GetDecimalValue());
     }
-    
 }
